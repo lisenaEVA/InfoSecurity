@@ -7,7 +7,7 @@
 #    res=requests.get('https://labs.forensics.su/bruteme1.php', auth=HTTPBasicAuth('katerina', i))
 #    print(res.status_code)
 #    if res.status_code==200:
-3        print (i, '=', res.text)
+#    print (i, '=', res.text)
 
 #5.2 Digest аутентификация 
         import requests
