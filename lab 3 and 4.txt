@@ -1,0 +1,12 @@
+3.1
+openssl enc -aes-256-cbc -d -nosalt -in aes-encrypted.bin  -out fileS.txt.enc -k 3e0eab074e8038ee91efe60ab897768d
+
+3.2
+openssl genrsa -out mykey.pem 1024       # создает файл ключа с именем mykey.pem, который использует 1024 бита
+openssl rsa -in mykey.pem -out public.pem -outform PEM -pubout     # извлекает открытый ключ
+openssl rsautl -decrypt -inkey mykey.pem -in rsa-encrypted.bin -out decrypted.txt  # расшифровывает сообщение, зашифрованное моим ключом
+openssl rsautl -encrypt -inkey mykey2.pem -pubin -in decrypted.txt -out file.ssl  # шифрует раскодированное сообщение, используя открытый ключ сервера
+
+4
+https://labs.forensics.su/lab4.php?login=katerina&cols=id,student_name,created_at ->
+https://labs.forensics.su/lab4.php?login=katerina&cols=id,secret%20as%20student_name,created_at
